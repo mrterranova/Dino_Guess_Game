@@ -1,4 +1,4 @@
-﻿    //Global variables
+    //Global variables
     var instruments = ["PIANO", "FLUTE", "VIOLIN", "DRUM", "LYRE", "TRUMPET", "GONG", "SITAR", "ACCORDIAN", "HARMONICA", "XYLOPHONE", "MARACAS"];
     var lives = 6;
     var correctGuesses = [];
@@ -50,8 +50,6 @@
         if (!userLetterisInWord) {
             lives--;
             incorrectGuesses.push(userLetter);
-            document.getElementById("numGuesses");
-            document.getElementById("wrongGuesses")
         }
 
         else if (str === randomInst) {
@@ -61,11 +59,9 @@
 
     if (str === randomInst) {
         wins++;
-        document.getElementById("winCounter");
         startGame();
     } else {
         losses++;
-        document.getElementById("lossesCounter");
         startGame();
     }
     console.log("Losses: " + losses);
