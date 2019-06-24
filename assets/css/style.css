@@ -1,0 +1,297 @@
+/*adding custom font to the file*/
+
+/*Main body display*/ 
+body {
+    background-color: black;
+}
+
+.vignette {
+    background-image: url("../images/Vignette.png");
+    position: absolute;
+    height: 100%;
+    width:100%;
+    background-size: cover;
+}
+
+.background {
+    background-image: url("../images/swamp.jpg");
+    position: absolute;
+    height: 100%; 
+    width: 100%;
+    background-size: cover;
+}
+
+
+h1 {
+    font-family: 'SCRAB';
+    display: flex;
+    justify-content: center;
+    align-content: flex-start;
+    font-size: 500%;
+    text-align: center;
+    text-shadow: 6px 6px black;
+    color: burlywood;
+}
+
+.jumbotron {
+opacity: .8;
+background: url(../images/rockywall_@2X.png);
+height: 300px;
+justify-content: center;
+width: 50%;
+margin-left: 25%;
+position: absolute;
+text-shadow: 6px 6px black;
+}
+
+.all {
+    display: flex; 
+    justify-content: flex-end;
+    align-content: center;
+}
+
+
+.trapezoid {
+    margin-top: 350px;
+    width: 500px;
+    border-bottom: 100px solid #ccc;
+    border-right: 50px solid transparent;
+    border-left: 50px solid transparent;
+    position: absolute;
+    float: left;   
+    margin-left: 24%;
+    margin-right: auto;
+    z-index: auto;
+    opacity:.5;
+}
+
+.guesses { 
+    text-align: center;
+    z-index: 1;
+    font-family: 'POLTT';
+}
+
+#wordToGuess {
+    margin-top:350px;
+    text-align: center;
+    font-family: 'POLTT';
+    
+}
+
+.lives {
+    color:#fff;
+    height: auto;
+    z-index: -1;
+    font-family: 'SCRAB';
+    letter-spacing: 1px;
+    text-align: center;
+    z-index: 2;
+    border-radius: 25px;
+    font-size: 30px;
+    text-shadow: 3px 3px rgb(63, 61, 61);
+}
+
+#numGuesses { 
+    font-family: 'POLTT';
+    color: red;
+    font-size: 70px;
+    text-shadow: 3px 3px rgb(63, 61, 61);
+}
+
+.parallelogram {
+    display:flex;
+    align-content: flex-end;
+    color:#fff;
+    background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_TyHYqUBNG00BGPnW04xyOkrL5iTejncXunV-47b41BVbTCaW");
+    margin-top: 10px;
+    padding:10px;
+    float: right;
+    font-family: 'POLTT';
+    letter-spacing: 1px;
+    -webkit-transform: skew(-10deg);
+    -moz-transform: skew(-10deg); 
+    -o-transform: skew(-10deg); 
+    box-shadow: 6px 6px rgb(63, 61, 61);
+    text-shadow: 3px 3px black;
+  }
+
+
+  /* Hints that get added and removed for the next Game */
+#hints{
+    font-family: fantasy;
+    font-size: 24px;
+    letter-spacing: 1px;
+    text-shadow: none;
+}
+
+  img {
+      height: 175px;
+      width: 200px;
+      position: absolute;
+      z-index: 4;
+      margin-top: 0px;
+      margin-left: 47%;
+      margin-top: 7%;
+  }
+
+.meteor {
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+    background-image: url("../images/meteor.jpg");
+    position: absolute;
+    height: 100%; 
+    width: 100%;
+    background-size: cover;
+}
+
+@keyframes shake {
+    0% {transform: translate(1px, 1px) rotate(0deg);}
+    10% {transform: translate(-1px, -2px) rotate(-1deg);}
+    20% {transform: translate(-3px, 0px) rotate(1deg);}
+    30% {transform: translate(3px, 2px) rotate(0deg);}
+    40% {transform: translate(1px, 1px) rotate(1deg);}
+    50% {transform: translate(-1px, 1px) rotate(-1deg);}
+    60% {transform: translate(-3px, -2px) rotate(0deg);}
+    70% {transform: translate(3px, 1px) rotate(-1deg);}
+    80% {transform: translate(-1px, -1px) rotate(1deg);}
+    90% {transform: translate(1px, 2px) rotate(0deg);}
+    100% {transform: translate(1px, -2px) rotate(-1deg);}
+}
+
+.lost {
+    background-color: black;
+}
+
+
+
+/* Media incorporated designs */
+@media only screen and (max-width: 768px) {
+
+.background {
+    background-image: url("../images/swamp.jpg");
+    position: absolute;
+    height: 100%; 
+    width: 105%;
+    background-size: cover;
+}
+.jumbotron {
+    width: 75%;
+}
+
+
+.parallelogram {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    box-shadow: none;
+}
+.lives { 
+    float:left;
+    margin-right: 400px;
+    margin-top: 0;
+}
+.trapezoid{
+    float:none;
+ margin-left:auto;
+ margin-right: auto;
+ width: 600px;
+
+}
+#wordToGuess {
+    margin-top: 220px;
+    float:none;
+    margin-left: 5%;
+
+}
+h1{
+    font-size: 400%;
+}
+#hints{
+    font-family: fantasy;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-shadow: none;
+}
+
+img {
+    height: 175px;
+    width: 100px;
+    position: absolute;
+    z-index: 4;
+    margin-top: 86px;
+    margin-left: 430px;
+    
+}
+
+}
+
+
+
+
+@media only screen and (max-width: 640px) {
+h1 { 
+    font-size: 400%;
+}
+
+.lives { 
+    float:left;
+    margin-right: 400px;
+    margin-top: 100px;
+}
+
+#wordToGuess {
+    margin-top: 100px;
+    float:none;
+    margin-left: 5%;
+
+}
+
+.trapezoid{
+    float:none;
+ margin-left:auto;
+ margin-right: auto;
+ width: 600px;
+}
+
+.parallelogram {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    box-shadow: none;
+}
+
+.guesses {
+    letter-spacing: 1px;
+    margin-bottom: 50px;
+}
+
+#hints{
+    font-family: fantasy;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-shadow: none;
+}
+
+img {
+    height: 175px;
+    width: 100px;
+    position: absolute;
+    z-index: 4;
+    margin-top: 86px;
+    margin-left: 430px;
+    
+}
+
+.jumbotron {
+    width: 75%;
+    }
+
+.background {
+    background-image: url("../images/swamp.jpg");
+    position: absolute;
+    height: 100%; 
+    width: 103%;
+    background-size: cover;
+}
+
+}

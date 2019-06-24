@@ -1,0 +1,11 @@
+@font-face {
+	font-family: 'SCRAB';
+	src: url('./SCRAB.eot');
+	src: local('SCRAB'), url('./SCRAB.woff') format('woff'), url('./SCRAB.ttf') format('truetype');
+}
+/* use this class to attach this font to any element i.e. <p class="fontsforweb_fontid_331">Text with this font applied</p> */
+.fontsforweb_fontid_331 {
+	font-family: 'SCRAB' !important;
+}
+
+/* Font downloaded from FontsForWeb.com */

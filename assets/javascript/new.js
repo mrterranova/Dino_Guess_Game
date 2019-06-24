@@ -7,6 +7,7 @@
     var losses =0;
     var randomInst;
     var strCorGuesses="";
+    var word;
 
     function startGame(){
         lives = 6;
@@ -20,23 +21,23 @@
             correctGuesses[i] = "_ ";
         }
 
-        strCorGuesses = correctGuesses.join("");
-        console.log(strCorGuesses);
-        gamePlay();
+        document.getElementById("wordToGuess").innerHTML = correctGuesses.join(" ");
+        document.getElementById("winCounter").innerHTML = wins;
+        document.getElementById("lossCounter").innerHTML = losses;
+        console.log(lives);
+        console.log(losses);
+        console.log(wins);
+        
     }
     
-    function gamePlay (){
-    
-    var userGuess;
-    
-    //game play
-    while (lives > 0) {
-        userGuess = prompt("Please pick a letter: ");
-        console.log("after prompt!");
-
-        var userLetter = userGuess.charAt().toUpperCase();
+    function gamePlay (userGuess){
+        
+        //game play
+            document.getElementById("numGuesses").innerHTML = lives;
+            
+            var userLetter = userGuess.charAt().toUpperCase();
         var userLetterisInWord = false;
-
+        
         for (var i = 0; i <randomInst.length; i++) {
             
             if (randomInst[i] === userLetter){
@@ -45,28 +46,35 @@
                 console.log(correctGuesses[i] + " " + i);
             }
         }
-        var str = correctGuesses.join("");
+        word = correctGuesses.join("");
         
         if (!userLetterisInWord) {
             lives--;
             incorrectGuesses.push(userLetter);
         }
-
-        else if (str === randomInst) {
+        
+        else if (word === randomInst) {
             break;
         }
+        
+        document.getElementById("wrongGuesses").innerHTML = incorrectGuesses.join(" ");
+        console.log(incorrectGuesses);
     }
 
-    if (str === randomInst) {
+    //determine whether player has won or has lost game
+    if (word === randomInst) {
         wins++;
         startGame();
     } else {
         losses++;
         startGame();
     }
-    console.log("Losses: " + losses);
-    console.log("Wins: " + wins);
-}
 
 //functions
 startGame();
+
+    document.onkeyup = function(event) { 
+        var letterGuessed = String.fromCharCode(event.keyCode).toUpperCase();
+        gamePlay(letterGuessed);
+        console.log(letterGuessed);
+     }
