@@ -1,80 +1,178 @@
-    //Global variables
-    var instruments = ["PIANO", "FLUTE", "VIOLIN", "DRUM", "LYRE", "TRUMPET", "GONG", "SITAR", "ACCORDIAN", "HARMONICA", "XYLOPHONE", "MARACAS"];
-    var lives = 6;
-    var correctGuesses = [];
-    var incorrectGuesses = [];
-    var wins =0;
-    var losses =0;
-    var randomInst;
-    var strCorGuesses="";
-    var word;
+var dinosaurs = ["COMPSOGNATHUS", "GALLIMIMUS", "SARCOSUCHUS", "CERATOSAURUS", "ELASMOSAURUS", "STYRACOSAURUS", "STYGIMOLOCH", "TROODON", "QUETZALCOATLUS", "BARYONYX", "PACHYCEPHALOSAURUS", "IGUANODON"];
 
-    function startGame(){
-        lives = 6;
-        correctGuesses =[];
-        incorrectGuesses = [];
-        
-        randomInst = instruments[Math.floor(Math.random() * instruments.length)];
-        console.log(randomInst);
+var hints = ["<li>Name means: Pretty Jaw.</li><li>Length of adult is 0.65m.</li><li>Ran on two legs.</li><li>Carnivore. </li><li>Lived in the late Jurassic.</li>",
+"<li>Name means: Chicken Mimic.</li><li>Length of adult is 1.9m tall at hip.</li><li>Ran on two legs. </li><li>Carnivore.</li><li>Lived in late Cretaceous.</li>",
+"<li>Name means: Flesh Crocodile.</li><li>Length of adult is 11-12m.</li><li>Swam and walked on four legs.</li><li>Carnivore.</li><li>Lived in Cretaceous.</li>",
+"<li>Name means: Horned Lizard.</li><li>Length of adult is 5-6m.</li><li>Ran on two legs. </li><li>Carnivore.</li><li>Lived in Jurassic.</li>",
+"<li>Name means: Thin Plate Lizard.</li><li>Length of adult is 10m.</li><li>Swam with four flippers.</li><li>Carnivore.</li><li>Lived in late Cretaceous.</li>",
+"<li>Name means: Pointed Lizard.</li><li>Length of adult is 5.5m.</li><li>Ran on four legs.</li><li>Herbivore.</li><li>Lived in Late Cretaceous.</li>",
+"<li>Name means: Demon from the river Styx.</li><li>Length of adult is 2-3m.</li><li>Ran on two legs.</li><li>Herbivore.</li><li>Lived in late Cretaceous.</li>",
+"<li>Name means: Wounding Tooth.</li><li>Length of adult is 2-3.5m.</li><li>Ran on two legs.</li><li>Carnivore.</li><li>Lived in Late Cretaceous.</li>",
+"<li>Name means: Feathered Serpent.</li><li>Length of adult is 10-11m.</li><li>Flew in sky.</li><li>Carnivore.</li><li>Lived in late Cretaceous.</li>",
+"<li>Name means: Heavy Claw.</li><li>Length of adult is 7.5-10m.</li><li>Ran on two legs.</li><li>Carnivore.</li><li>Lived in early Cretaceous.</li>",
+"<li>Name means: Thick-Headed Lizard.</li><li>Length of adult is 4.5m.</li><li>Ran on two legs.</li><li>Herbivore.</li><li>Live in late Cretaceous.</li>",
+"<li>Name means: Iguana Tooth.</li><li>Length of adult is 6-10m.</li><li>Ran on two legs.</li><li>Herbivore.</li><li>Lived in Cretaceous.</li>"];
 
-        for(var i = 0; i < randomInst.length; i++){
-            correctGuesses[i] = "_ ";
-        }
+var images = ["composognathus.png", "GALLIMIMUS.png", "SARCOSUCHUS.png","CERATOSAURUS.png","ELASMOSAURUS.png","STYRACOSAURUS.png","STYGIMOLOCH.png","TROODON.png","QUETZALCOATLUS.png","BARYONYX.png","PACHYCEPHALOSAURUS.png","IGUANADON.png"];
 
-        document.getElementById("wordToGuess").innerHTML = correctGuesses.join(" ");
-        document.getElementById("winCounter").innerHTML = wins;
-        document.getElementById("lossCounter").innerHTML = losses;
-        console.log(lives);
-        console.log(losses);
-        console.log(wins);
-        
-    }
+var s = "";
+var lettersinWord = "";
+var num = 0;
+var blanks = [];
+var wrong = [];
+var pictures=[];
+
+var winCount = 0;
+var lossCount = 0;
+var guesses = 9; 
+var hintTime = 0
+
+//------------------------------------------
+
+function startGame(){
     
-    function gamePlay (userGuess){
+    s = dinosaurs[Math.floor(Math.random() * dinosaurs.length)];
+    lettersinWord = s.split("");
+    num = lettersinWord.length;
+
+    //reset
+    guesses = 9;
+    //wrong = [];
+    blanks = [];
+    hintTime = 0;
+    loc = 0;
+
+    //populate 
+    for (var i = 0; i < num; i++){
+        blanks.push("_");
+    }
+
+    document.getElementById("wordToGuess").innerHTML = blanks.join(" ");
+    document.getElementById("numGuesses").innerHTML = guesses; 
+    document.getElementById("winCounter").innerHTML = winCount; 
+    document.getElementById("lossCounter").innerHTML = lossCount;
+
+    // resetImages();
+
+    // var x = document.getElementById("hints");
+    // x.style.display = "none";
+
+    // y = document.getElementById("img");
+    // y.style.display = "none";
+
+    console.log("Before Image")
+
+    var image = document.querySelector(".background")
+    image.classList.remove("class", "meteor");
+}
+
+
+function checkLetters(letter) {
+
+    //determine whether user is typing a letter only
+    if (letter >= "A" && letter <="Z") {
+        console.log("hello");
         
-        //game play
-            document.getElementById("numGuesses").innerHTML = lives;
-            
-            var userLetter = userGuess.charAt().toUpperCase();
-        var userLetterisInWord = false;
-        
-        for (var i = 0; i <randomInst.length; i++) {
-            
-            if (randomInst[i] === userLetter){
-                correctGuesses[i] = userLetter;
-                userLetterisInWord = true;
-                console.log(correctGuesses[i] + " " + i);
+
+        var isLetterInWord = false; 
+
+        for(var i = 0; i < num; i++) { 
+            if (s[i] === letter){
+                isLetterInWord = true; 
+
             }
         }
-        word = correctGuesses.join("");
-        
-        if (!userLetterisInWord) {
-            lives--;
-            incorrectGuesses.push(userLetter);
+
+        if(isLetterInWord){
+            for (var i = 0; i < num; i++){
+                if (s[i] === letter){
+                    blanks[i] = letter; 
+                }
+            }
+            hintTime ++;
         }
-        
-        else if (word === randomInst) {
-            break;
+
+        else { 
+            var isAlreadyThere = false;
+            for (var i = 0; i < wrong.length; i++){
+
+                if (wrong[i] === letter){
+                    
+                    isAlreadyThere = true;
+                }  
+           }
+
+           if (!isAlreadyThere) {
+                wrong.push(letter);
+                guesses--;  
+           }
+
         }
-        
-        document.getElementById("wrongGuesses").innerHTML = incorrectGuesses.join(" ");
-        console.log(incorrectGuesses);
+    } 
+}
+
+function roundComplete(){ 
+
+    document.getElementById("wordToGuess").innerHTML = blanks.join(" ");
+    document.getElementById("numGuesses").innerHTML = guesses;
+
+    document.getElementById("wrongGuesses").innerHTML = wrong.join(" ");
+   
+   
+    //reward player for correct answers!
+        var loc = dinosaurs.indexOf(s);
+        document.getElementById('hints').innerHTML = hints[loc];
+        console.log(" This does work: " + hints[loc]);
+
+    if (guesses === 1){
+        //Guessed Lives grow larger
+        //shaking on the Screen
+        console.log("Goodbye")
+        var image = document.getElementsByClassName("background");
+        console.log(image)
+         //image[0].style.background =  "../images/meteor.jpg";
+        image.setAttribute("class", "meteor");
+
     }
 
-    //determine whether player has won or has lost game
-    if (word === randomInst) {
-        wins++;
+    
+    //check if user won or lost
+    if (lettersinWord == blanks.toString()) {
+
+        //Score win point
+        winCount++; 
+
+        document.getElementById("winCounter").innerHTML = winCount; 
+
+        //Show image of the dinosaur upon win
+        var image = document.getElementById('imga');
+        var pics = dinosaurs.indexOf(s);
+        image.src= "assets/images/"+images[pics];
+
         startGame();
-    } else {
-        losses++;
+
+    }
+    else if (guesses === 0){
+        console.log("Not working if lost game?")
+        lossCount++;
+        document.getElementById("lossCounter").innerHTML = lossCount;
+        wrong = [];
+        document.getElementById('wrongGuesses').innerHTML = '';
+        //darken screen by switching the attributes
+        //var image1 = document.getElementsByClassName("background");
+        //document.querySelector(".background").setAttribute("class", "lost");
         startGame();
     }
+}
 
-//functions
 startGame();
+    //reset image
 
-    document.onkeyup = function(event) { 
-        var letterGuessed = String.fromCharCode(event.keyCode).toUpperCase();
-        gamePlay(letterGuessed);
-        console.log(letterGuessed);
-     }
+document.onkeyup = function(event) { 
+    var letterGuessed = String.fromCharCode(event.keyCode).toUpperCase();
+    checkLetters(letterGuessed);
+    console.log(letterGuessed);
+    roundComplete();
+    console.log(wrong);
+ }
+

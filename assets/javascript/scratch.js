@@ -180,6 +180,3 @@ document.onkeyup = function(event) {
     roundComplete();
     console.log(wrong);
  }
-
-
-

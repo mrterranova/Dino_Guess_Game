@@ -17,7 +17,7 @@ body {
     background-image: url("../images/swamp.jpg");
     position: absolute;
     height: 100%; 
-    width: 100%;
+    width: 103%;
     background-size: cover;
 }
 
@@ -52,7 +52,7 @@ text-shadow: 6px 6px black;
 
 
 .trapezoid {
-    margin-top: 350px;
+    margin-top: 340px;
     width: 500px;
     border-bottom: 100px solid #ccc;
     border-right: 50px solid transparent;
@@ -69,6 +69,7 @@ text-shadow: 6px 6px black;
     text-align: center;
     z-index: 1;
     font-family: 'POLTT';
+    font-size: 26px;
 }
 
 #wordToGuess {
@@ -128,7 +129,7 @@ text-shadow: 6px 6px black;
       height: 175px;
       width: 200px;
       position: absolute;
-      z-index: 4;
+      z-index: 9;
       margin-top: 0px;
       margin-left: 47%;
       margin-top: 7%;
@@ -140,7 +141,7 @@ text-shadow: 6px 6px black;
     background-image: url("../images/meteor.jpg");
     position: absolute;
     height: 100%; 
-    width: 100%;
+    width: 103%;
     background-size: cover;
 }
 
@@ -198,7 +199,7 @@ text-shadow: 6px 6px black;
 
 }
 #wordToGuess {
-    margin-top: 220px;
+    margin-top: 240px;
     float:none;
     margin-left: 5%;
 
@@ -214,15 +215,17 @@ h1{
 }
 
 img {
-    height: 175px;
-    width: 100px;
+    height: 200px;
+    width: 180px;
     position: absolute;
     z-index: 4;
-    margin-top: 86px;
-    margin-left: 430px;
-    
+    margin-top: 90px;
+    margin-left: 380px;
 }
 
+.winLoss {
+    margin-top: 38px;
+}
 }
 
 
@@ -240,7 +243,7 @@ h1 {
 }
 
 #wordToGuess {
-    margin-top: 100px;
+    margin-top: 150px;
     float:none;
     margin-left: 5%;
 
@@ -274,7 +277,7 @@ h1 {
 
 img {
     height: 175px;
-    width: 100px;
+    width: 150px;
     position: absolute;
     z-index: 4;
     margin-top: 86px;
