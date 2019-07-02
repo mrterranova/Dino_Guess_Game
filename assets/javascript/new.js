@@ -62,8 +62,12 @@ function startGame(){
 
     console.log("Before Image")
 
-    var image = document.querySelector(".background")
-    image.classList.remove("class", "meteor");
+    var image = document.getElementsByClassName("meteor");
+    console.log(image.length)
+    if (image.length > 0){
+        image[0].style.background =  "../images/swamp.jpg";
+        image[0].setAttribute("class", "background");
+    }
 }
 
 
@@ -130,8 +134,8 @@ function roundComplete(){
         console.log("Goodbye")
         var image = document.getElementsByClassName("background");
         console.log(image)
-         //image[0].style.background =  "../images/meteor.jpg";
-        image.setAttribute("class", "meteor");
+        image[0].style.background =  "../images/meteor.jpg";
+        image[0].setAttribute("class", "meteor");
 
     }
 
@@ -148,6 +152,11 @@ function roundComplete(){
         var image = document.getElementById('imga');
         var pics = dinosaurs.indexOf(s);
         image.src= "assets/images/"+images[pics];
+        $("<audio></audio>").attr({
+            'src':'audio/something.mp3',
+            'volume':0.4,
+            'autoplay':'autoplay'
+        }).appendTo("body");
 
         startGame();
 
@@ -158,9 +167,11 @@ function roundComplete(){
         document.getElementById("lossCounter").innerHTML = lossCount;
         wrong = [];
         document.getElementById('wrongGuesses').innerHTML = '';
-        //darken screen by switching the attributes
-        //var image1 = document.getElementsByClassName("background");
-        //document.querySelector(".background").setAttribute("class", "lost");
+        $("<audio></audio>").attr({
+            'src':'audio/something.mp3',
+            'volume':0.4,
+            'autoplay':'autoplay'
+        }).appendTo("body");
         startGame();
     }
 }
