@@ -165,14 +165,13 @@ function roundComplete(){
         console.log("Not working if lost game?")
         lossCount++;
         document.getElementById("lossCounter").innerHTML = lossCount;
-        wrong = [];
         document.getElementById('wrongGuesses').innerHTML = '';
         $("<audio></audio>").attr({
             'src':'audio/something.mp3',
             'volume':0.4,
             'autoplay':'autoplay'
         }).appendTo("body");
-        wrong=[];
+        wrong=[""];
         startGame();
     }
 }
