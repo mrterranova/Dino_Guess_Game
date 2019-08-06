@@ -157,7 +157,7 @@ function roundComplete(){
             'volume':0.4,
             'autoplay':'autoplay'
         }).appendTo("body");
-        wrong =[];
+        wrong =[""];
         startGame();
 
     }
