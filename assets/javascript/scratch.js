@@ -25,7 +25,8 @@ var pictures=[];
 var winCount = 0;
 var lossCount = 0;
 var guesses = 9; 
-var hintTime = 0
+var hintTime = 0;
+var image = null;
 
 //------------------------------------------
 
@@ -41,6 +42,7 @@ function startGame(){
     blanks = [];
     hintTime = 0;
     loc = 0;
+    image=null;
 
     //populate 
     for (var i = 0; i < num; i++){
@@ -126,15 +128,7 @@ function roundComplete(){
         document.getElementById('hints').innerHTML = hints[loc];
         console.log(" This does work: " + hints[loc]);
 
-    if (guesses === 1){
-        //blinking lives
-            function blink() {
-                var f = document.getElementById('numGuesses');
-                setInterval(function(){
-                    f.style.dislay = f.style.display
-                }, 1000);
-            }
-        //Guessed Lives grow larger
+    if (guesses === 3){
         //shaking on the Screen
         var image = document.getElementsByClassName("background");
         document.querySelector(".background").setAttribute("class", "meteor");
@@ -154,6 +148,8 @@ function roundComplete(){
         var pics = dinosaurs.indexOf(s);
         image.src= "assets/images/"+images[pics];
 
+        //<source src="assets/images/Trex31.wav" type="audio/wav"></source>
+
         startGame();
 
     }
@@ -163,9 +159,11 @@ function roundComplete(){
         wrong = [];
 
         //darken screen by switching the attributes
-        var image1 = document.getElementsByClassName("background");
+        var image = document.getElementsByClassName("background");
         document.querySelector(".background").setAttribute("class", "lost");
        
+        //<source src="assets/images/Thunder.mp3" type="audio/mp3"></source>
+
         startGame();
     }
 }
@@ -180,3 +178,6 @@ document.onkeyup = function(event) {
     roundComplete();
     console.log(wrong);
  }
+
+
+
