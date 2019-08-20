@@ -12,7 +12,7 @@ var hints = ["<li>Name means: Pretty Jaw.</li><li>Length of adult is 0.65m.</li>
 "<li>Name means: Heavy Claw.</li><li>Length of adult is 7.5-10m.</li><li>Ran on two legs.</li><li>Carnivore.</li><li>Lived in early Cretaceous.</li>",
 "<li>Name means: Thick-Headed Lizard.</li><li>Length of adult is 4.5m.</li><li>Ran on two legs.</li><li>Herbivore.</li><li>Live in late Cretaceous.</li>",
 "<li>Name means: Iguana Tooth.</li><li>Length of adult is 6-10m.</li><li>Ran on two legs.</li><li>Herbivore.</li><li>Lived in Cretaceous.</li>",
-"<li>Name means: Three-horned Face.</li><li>Length of adult is 7.9-9m.</li><li>Ran on four legs.</li>"];
+"<li>Name means: Three-horned Face.</li><li>Length of adult is 7.9-9m.</li><li>Ran on four legs.</li><li>Herbivore.</li>"];
 
 var images = ["composognathus.png", "GALLIMIMUS.png", "SARCOSUCHUS.png","CERATOSAURUS.png","ELASMOSAURUS.png","STYRACOSAURUS.png","STYGIMOLOCH.png","TROODON.png","QUETZALCOATLUS.png","BARYONYX.png","PACHYCEPHALOSAURUS.png","IGUANADON.png"];
 
