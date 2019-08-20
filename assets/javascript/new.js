@@ -1,4 +1,4 @@
-var dinosaurs = ["COMPSOGNATHUS", "GALLIMIMUS", "SARCOSUCHUS", "CERATOSAURUS", "ELASMOSAURUS", "STYRACOSAURUS", "STYGIMOLOCH", "TROODON", "QUETZALCOATLUS", "BARYONYX", "PACHYCEPHALOSAURUS", "IGUANODON"];
+var dinosaurs = ["COMPSOGNATHUS", "GALLIMIMUS", "SARCOSUCHUS", "CERATOSAURUS", "ELASMOSAURUS", "STYRACOSAURUS", "STYGIMOLOCH", "TROODON", "QUETZALCOATLUS", "BARYONYX", "PACHYCEPHALOSAURUS", "IGUANODON","TRICERATOPS"];
 
 var hints = ["<li>Name means: Pretty Jaw.</li><li>Length of adult is 0.65m.</li><li>Ran on two legs.</li><li>Carnivore. </li><li>Lived in the late Jurassic.</li>",
 "<li>Name means: Chicken Mimic.</li><li>Length of adult is 1.9m tall at hip.</li><li>Ran on two legs. </li><li>Carnivore.</li><li>Lived in late Cretaceous.</li>",
