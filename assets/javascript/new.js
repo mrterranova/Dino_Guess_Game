@@ -16,7 +16,7 @@ var hints = ["<li>Name means: Pretty Jaw.</li><li>Length of adult is 0.65m.</li>
 "<li>Name means: Muhajanga Lizard.</li><li>Length of adult is 5.6m.</li><li>Ran on two legs.</li><li>Carnivore.</li><li>Lived in Late Cretaceous.</li>",
 "<li>Name means: Shu Lizard.</li><li>Length of adult is 11m.</li><li>Ran on four legs.</li><li>Herbivore.</li><li>Lived in Early Jurassic.</li>",
 "<li>Name means: Great Lizard.</li><li>Length of adult is 6m.</li><li>Ran on two legs.</li><li>Carnivore.</li><li>Lived in Middle Jurassic.</li>",
-"<li>Name means: Smooth-Sided Teeth.</li><li>Length of adult is 6.4m.</li>"];
+"<li>Name means: Smooth-Sided Teeth.</li><li>Length of adult is 6.4m.</li><li>Swam with four flippers.</li>"];
 
 var images = ["composognathus.png", "GALLIMIMUS.png", "SARCOSUCHUS.png","CERATOSAURUS.png","ELASMOSAURUS.png","STYRACOSAURUS.png","STYGIMOLOCH.png","TROODON.png","QUETZALCOATLUS.png","BARYONYX.png","PACHYCEPHALOSAURUS.png","IGUANADON.png"];
 
